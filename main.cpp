@@ -1,11 +1,13 @@
 #include <iostream>
+#include <fstream>
+
+using namespace std;
 
 struct elem {
-    int val;
+    double val;
     elem *succ;
 };
-
-typedef elem *lista;
+typedef elem* lista;
 
 void insTesta(lista &inizio, elem a) {
     lista p = new elem;        // crea nuovo elem
@@ -34,11 +36,12 @@ void insFondo(lista &inizio, elem a) {
     else p->succ = q;
 }
 
-bool estFondo(lista &inizio, elem &a) {
+bool estFondo(lista &inizio, elem& a) {
     lista p, q;
     if (inizio == 0) return false;
     for (q = inizio; q->succ != 0; q = q->succ) p = q;
-    a = q->val;
+    //TODO Teoria diceva a=q->val;
+    a = *q;
     //controlla se si estrae il primo elemento
     if (q == inizio) inizio = 0;
     else p->succ = 0;
@@ -73,6 +76,6 @@ bool estrai_elem_dato(lista &inz, elem &a) {
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    cout << "MENU" << endl;
     return 0;
 }
