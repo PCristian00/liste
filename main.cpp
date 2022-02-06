@@ -42,7 +42,7 @@ bool estFondo(lista &inizio, elem &a) {
     if (inizio == 0) return false;
     for (q = inizio; q->succ != 0; q = q->succ) p = q;
     //TODO Teoria diceva a=q->val;
-    a = *q;
+    a.val = q->val;
     //controlla se si estrae il primo elemento
     if (q == inizio) inizio = 0;
     else p->succ = 0;
