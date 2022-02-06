@@ -7,7 +7,8 @@ struct elem {
     double val;
     elem *succ;
 };
-typedef elem* lista;
+
+typedef elem *lista;
 
 void insTesta(lista &inizio, elem a) {
     lista p = new elem;        // crea nuovo elem
@@ -36,7 +37,7 @@ void insFondo(lista &inizio, elem a) {
     else p->succ = q;
 }
 
-bool estFondo(lista &inizio, elem& a) {
+bool estFondo(lista &inizio, elem &a) {
     lista p, q;
     if (inizio == 0) return false;
     for (q = inizio; q->succ != 0; q = q->succ) p = q;
@@ -76,6 +77,67 @@ bool estrai_elem_dato(lista &inz, elem &a) {
 }
 
 int main() {
-    cout << "MENU" << endl;
+
+    int s = 0;
+
+    elem a;
+    lista inizio;
+
+    while (s != 8) {
+
+        cout << "MENU" << endl;
+        cout << "1 - INS IN TESTA" << endl;
+        cout << "2 - EST DA TESTA" << endl;
+        cout << "3 - INS IN FONDO" << endl;
+        cout << "4 - EST DA FONDO" << endl;
+        cout << "5 - INS ORDINATO" << endl;
+        cout << "6 - EST ELEM DATO" << endl;
+        cout << "7 - STAMPA SU FILE" << endl;
+        cout << "8 - ESCI" << endl;
+        cout << endl;
+        cout << "SCEGLIERE OPERAZIONE" << endl;
+
+        cin >> s;
+
+        switch (s) {
+
+            case 1:
+                insTesta(inizio, a);
+                break;
+
+            case 2:
+                estrai_da_testa(inizio, a);
+                break;
+
+            case 3:
+                insFondo(inizio, a);
+                break;
+
+            case 4:
+                estFondo(inizio, a);
+                break;
+
+            case 5:
+                insOrdinato(inizio, a);
+                break;
+
+            case 6:
+                estrai_elem_dato(inizio, a);
+                break;
+
+            case 7:
+                //stampa su file;
+                break;
+
+            case 8:
+                cout << "USCITA" << endl;
+                break;
+
+            default:
+                cout << "VALORE NON AMMESSO" << endl;
+                break;
+        }
+        cout << endl;
+    }
     return 0;
 }
