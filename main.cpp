@@ -79,12 +79,14 @@ bool estrai_elem_dato(lista &inz, elem &a) {
 int main() {
 
     int s = 0;
+    int c = 0;
 
     elem a;
-    lista inizio;
+    lista inizio, p;
     fstream out;
-    out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
+    //out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
     if (!out.is_open()) cout << "Errore apertura file" << endl;
+
 
     while (s != 8) {
 
@@ -105,37 +107,54 @@ int main() {
         switch (s) {
 
             case 1:
+                cout << "INSERIRE VALORE" << endl;
+                cin >> a.val;
                 insTesta(inizio, a);
                 break;
 
             case 2:
+                cout << "INSERIRE VALORE" << endl;
+                cin >> a.val;
                 estrai_da_testa(inizio, a);
                 break;
 
             case 3:
+                cout << "INSERIRE VALORE" << endl;
+                cin >> a.val;
                 insFondo(inizio, a);
                 break;
 
             case 4:
+                cout << "INSERIRE VALORE" << endl;
+                cin >> a.val;
                 estFondo(inizio, a);
                 break;
 
             case 5:
+                cout << "INSERIRE VALORE" << endl;
+                cin >> a.val;
                 insOrdinato(inizio, a);
                 break;
 
             case 6:
+                cout << "INSERIRE VALORE" << endl;
+                cin >> a.val;
                 estrai_elem_dato(inizio, a);
                 break;
 
             case 7:
-                //stampa su file;
-                out << "LISTA" << endl;
 
-                for (int i = 0; i < 10; i++) out << i << endl;
+                out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
+
+                p = inizio;
+
+                while (p != 0) {
+                    out << p->val << endl;
+                    p = p->succ;
+                }
 
                 cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
-
+                out.close();
                 break;
 
             case 8:
