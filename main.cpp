@@ -82,6 +82,9 @@ int main() {
 
     elem a;
     lista inizio;
+    fstream out;
+    out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
+    if (!out.is_open()) cout << "Errore apertura file" << endl;
 
     while (s != 8) {
 
@@ -127,6 +130,12 @@ int main() {
 
             case 7:
                 //stampa su file;
+                out << "LISTA" << endl;
+
+                for (int i = 0; i < 10; i++) out << i << endl;
+
+                cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
+
                 break;
 
             case 8:
