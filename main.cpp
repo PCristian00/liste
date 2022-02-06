@@ -115,7 +115,8 @@ int main() {
             case 2:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
-                estrai_da_testa(inizio, a);
+                if (estrai_da_testa(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
+                else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 3:
@@ -127,7 +128,8 @@ int main() {
             case 4:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
-                estFondo(inizio, a);
+                if (estFondo(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
+                else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 5:
@@ -139,7 +141,8 @@ int main() {
             case 6:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
-                estrai_elem_dato(inizio, a);
+                if (estrai_elem_dato(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
+                else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 7:
