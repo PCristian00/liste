@@ -79,9 +79,8 @@ bool estrai_elem_dato(lista &inz, elem &a) {
 int main() {
 
     int s = 0;
-    int c = 0;
 
-    elem a;
+    elem a{};
     lista inizio, p;
     fstream out;
     //out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
@@ -147,7 +146,7 @@ int main() {
 
             case 7:
 
-                out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
+                out.open(R"(C:\Users\Thinkpad User\CLionProjects\liste\lista.txt)", ios::out);
 
                 p = inizio;
 
