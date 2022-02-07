@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
 using namespace std;
 
@@ -76,9 +77,9 @@ bool estrai_elem_dato(lista &inz, elem &a) {
     return true;
 }
 
-void stampaFile(lista &inz) {
+void stampaFile(lista &inz,char path[]) {
     fstream out;
-    out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
+    out.open(path, ios::out);
 
     lista p = inz;
 
@@ -97,6 +98,8 @@ int main() {
     elem a{};
     lista inizio;
     fstream out;
+
+    char nomefile[100];
 
 
     while (s != 8) {
@@ -157,7 +160,8 @@ int main() {
                 break;
 
             case 7:
-                stampaFile(inizio);
+                strcpy(nomefile,"C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt");
+                stampaFile(inizio,nomefile);
                 cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
                 break;
 
