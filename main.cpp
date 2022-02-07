@@ -81,6 +81,8 @@ bool stampaFile(lista &inz,char path[]) {
     fstream out;
 
     out.open(path, ios::out);
+
+
     if (!out.is_open()) return false;
 
     for (lista p = inz; p != 0; p = p->succ)
