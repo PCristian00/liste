@@ -120,7 +120,7 @@ int main() {
 
     char nomefile[100];
 
-    while (s != 8) {
+    while (s != 9) {
 
         cout << "MENU" << endl;
         cout << "1 - INS IN TESTA" << endl;
@@ -129,9 +129,10 @@ int main() {
         cout << "4 - EST DA FONDO" << endl;
         cout << "5 - INS ORDINATO" << endl;
         cout << "6 - EST ELEM DATO" << endl;
-        cout << "7 - STAMPA SU FILE" << endl;
-        cout << "8 - ESCI" << endl;
-        cout << "9 - ORDINA" <<endl;
+        cout << "7 - ORDINA" <<endl;
+        cout << "8 - STAMPA SU FILE" << endl;
+        cout << "9 - ESCI" << endl;
+
         cout << endl;
         cout << "SCEGLIERE OPERAZIONE" << endl;
 
@@ -178,19 +179,19 @@ int main() {
                 break;
 
             case 7:
+                ordinaLista(inizio);
+                cout<<"ORDINATI"<<endl;
+                break;
+
+            case 8:
                 cout << "INSERIRE NOME FILE (es. lista.txt)" << endl;
                 cin >> nomefile;
                 stampaFile(inizio, nomefile);
                 cout << "LA LISTA E' STATA SALVATA IN " << nomefile << endl;
                 break;
 
-            case 8:
-                cout << "USCITA" << endl;
-                break;
-
             case 9:
-                ordinaLista(inizio);
-                cout<<"ORDINATI"<<endl;
+                cout << "USCITA" << endl;
                 break;
 
             default:
