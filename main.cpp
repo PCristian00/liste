@@ -76,15 +76,25 @@ bool estrai_elem_dato(lista &inz, elem &a) {
     return true;
 }
 
+bool stampaFile(lista &inz) {
+    fstream out;
+    if (!out.is_open()) return false;
+
+    out.open(R"(C:\Users\Thinkpad User\CLionProjects\liste\lista.txt)", ios::out);
+
+    for (lista p = inz; p != 0; p = p->succ)
+        out << p->val << endl;
+
+    out.close();
+    return true;
+}
+
 int main() {
 
     int s = 0;
 
     elem a{};
-    lista inizio, p;
-    fstream out;
-    //out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
-    if (!out.is_open()) cout << "Errore apertura file" << endl;
+    lista inizio;
 
 
     while (s != 8) {
@@ -115,7 +125,7 @@ int main() {
             case 2:
 
                 if (estrai_da_testa(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
-                else cout <<"LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
+                else cout << "LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 3:
@@ -127,7 +137,7 @@ int main() {
 
             case 4:
                 if (estFondo(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
-                else cout <<"LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
+                else cout << "LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 5:
@@ -146,17 +156,10 @@ int main() {
 
             case 7:
 
-                out.open(R"(C:\Users\Thinkpad User\CLionProjects\liste\lista.txt)", ios::out);
+                if (stampaFile(inizio))
+                    cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
+                else cout << "ERRORE APERTURA FILE" << endl;
 
-                p = inizio;
-
-                while (p != 0) {
-                    out << p->val << endl;
-                    p = p->succ;
-                }
-
-                cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
-                out.close();
                 break;
 
             case 8:
