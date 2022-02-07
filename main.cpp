@@ -79,12 +79,12 @@ bool estrai_elem_dato(lista &inz, elem &a) {
 
 void stampaFile(lista &inz, char nomefile[]) {
     fstream out;
+    //cartella in cui viene salvato il file
     char dir[] = "C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
     char path[200];
+    //Il percorso equivale a posizione (dir) + nome del file (nomefile)
     strcat(path, dir);
     strcat(path, nomefile);
-
-    cout << path << endl;
 
     out.open(path, ios::out);
 
@@ -107,7 +107,6 @@ int main() {
     fstream out;
 
     char nomefile[100];
-
 
     while (s != 8) {
 
@@ -135,7 +134,6 @@ int main() {
                 break;
 
             case 2:
-
                 if (estrai_da_testa(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
                 else cout << "LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
                 break;
@@ -169,7 +167,6 @@ int main() {
             case 7:
                 cout << "INSERIRE NOME FILE (es. lista.txt)" << endl;
                 cin >> nomefile;
-
                 stampaFile(inizio, nomefile);
                 cout << "LA LISTA E' STATA SALVATA IN " << nomefile << endl;
                 break;
