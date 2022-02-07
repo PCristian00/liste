@@ -77,14 +77,14 @@ bool estrai_elem_dato(lista &inz, elem &a) {
     return true;
 }
 
-void stampaFile(lista &inz,char nomefile[]) {
+void stampaFile(lista &inz, char nomefile[]) {
     fstream out;
-    char dir[]="C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
+    char dir[] = "C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
     char path[200];
-    strcat(path,dir);
-    strcat(path,nomefile);
+    strcat(path, dir);
+    strcat(path, nomefile);
 
-    cout<<path<<endl;
+    cout << path << endl;
 
     out.open(path, ios::out);
 
@@ -167,12 +167,11 @@ int main() {
                 break;
 
             case 7:
-                //strcpy(nomefile,"test2.txt");
-                cin>>nomefile;
+                cout << "INSERIRE NOME FILE (es. lista.txt)" << endl;
+                cin >> nomefile;
 
-                //strcat(nomefile,"test1.txt");
-                stampaFile(inizio,nomefile);
-                cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
+                stampaFile(inizio, nomefile);
+                cout << "LA LISTA E' STATA SALVATA IN " << nomefile << endl;
                 break;
 
             case 8:
