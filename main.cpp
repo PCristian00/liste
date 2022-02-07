@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
 using namespace std;
 
@@ -76,11 +77,11 @@ bool estrai_elem_dato(lista &inz, elem &a) {
     return true;
 }
 
-bool stampaFile(lista &inz) {
+bool stampaFile(lista &inz,char path[]) {
     fstream out;
-    if (!out.is_open()) return false;
 
-    out.open(R"(C:\Users\Thinkpad User\CLionProjects\liste\lista.txt)", ios::out);
+    out.open(path, ios::out);
+    if (!out.is_open()) return false;
 
     for (lista p = inz; p != 0; p = p->succ)
         out << p->val << endl;
@@ -112,6 +113,9 @@ int main() {
         cout << "SCEGLIERE OPERAZIONE" << endl;
 
         cin >> s;
+
+        char nf[20];
+        char path[]="C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
 
         switch (s) {
 
@@ -156,10 +160,16 @@ int main() {
 
             case 7:
 
-                if (stampaFile(inizio))
+                strcpy(nf,"sally.txt");
+                cout<<nf<<endl;
+
+
+
+                strcat(path,nf);
+
+                if (stampaFile(inizio,path))
                     cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
                 else cout << "ERRORE APERTURA FILE" << endl;
-
                 break;
 
             case 8:
