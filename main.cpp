@@ -113,7 +113,6 @@ void stampaFile(lista &inz, char nomefile[]) {
 }
 
 void stats(lista &inz) {
-
     lista p;
     double sum = 0;
     int c = 0;
@@ -135,14 +134,11 @@ void stats(lista &inz) {
 }
 
 int main() {
-
     int s = 0;
     int sub = 0;
-
     elem a{};
     lista inizio;
     fstream out;
-
     char nomefile[100];
 
     while (s != 6) {
@@ -157,7 +153,6 @@ int main() {
 
         cout << endl;
         cout << "SCEGLIERE OPERAZIONE" << endl;
-
         cin >> s;
 
         switch (s) {
@@ -202,7 +197,6 @@ int main() {
                 cout << "2 - FONDO" << endl;
                 cout << "3 - ELEMENTO SCELTO" << endl;
                 cout << "DOVE ESTRARRE?" << endl;
-
                 cin >> sub;
 
                 switch (sub) {
@@ -227,7 +221,6 @@ int main() {
                         cout << "VALORE NON AMMESSO" << endl;
                         break;
                 }
-
                 break;
 
             case 3:
