@@ -42,7 +42,7 @@ bool estFondo(lista &inizio, elem &a) {
     if (inizio == 0) return false;
     for (q = inizio; q->succ != 0; q = q->succ) p = q;
     //TODO Teoria diceva a=q->val;
-    a = *q;
+    a.val = q->val;
     //controlla se si estrae il primo elemento
     if (q == inizio) inizio = 0;
     else p->succ = 0;
@@ -79,13 +79,10 @@ bool estrai_elem_dato(lista &inz, elem &a) {
 int main() {
 
     int s = 0;
-    int c = 0;
 
-    elem a;
+    elem a{};
     lista inizio, p;
     fstream out;
-    //out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
-    if (!out.is_open()) cout << "Errore apertura file" << endl;
 
 
     while (s != 8) {
@@ -110,32 +107,32 @@ int main() {
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
                 insTesta(inizio, a);
+                cout << a.val << " INSERITO IN TESTA ALLA LISTA" << endl;
                 break;
 
             case 2:
-                cout << "INSERIRE VALORE" << endl;
-                cin >> a.val;
+
                 if (estrai_da_testa(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
-                else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
+                else cout << "LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 3:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
                 insFondo(inizio, a);
+                cout << a.val << " INSERITO IN CODA ALLA LISTA" << endl;
                 break;
 
             case 4:
-                cout << "INSERIRE VALORE" << endl;
-                cin >> a.val;
                 if (estFondo(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
-                else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
+                else cout << "LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 5:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
                 insOrdinato(inizio, a);
+                cout << a.val << " INSERITO NELLA LISTA" << endl;
                 break;
 
             case 6:
