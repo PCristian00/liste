@@ -112,6 +112,7 @@ void stampaFile(lista &inz, char nomefile[]) {
     out.close();
 }
 
+//Mostra su schermo la lista e le sue statistiche: conta, somma e media dei suoi elementi
 void stats(lista &inz) {
     lista p;
     double sum = 0;
