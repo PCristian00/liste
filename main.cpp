@@ -109,32 +109,32 @@ int main() {
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
                 insTesta(inizio, a);
+                cout << a.val << " INSERITO IN TESTA ALLA LISTA" << endl;
                 break;
 
             case 2:
-                cout << "INSERIRE VALORE" << endl;
-                cin >> a.val;
+
                 if (estrai_da_testa(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
-                else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
+                else cout <<"LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 3:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
                 insFondo(inizio, a);
+                cout << a.val << " INSERITO IN CODA ALLA LISTA" << endl;
                 break;
 
             case 4:
-                cout << "INSERIRE VALORE" << endl;
-                cin >> a.val;
                 if (estFondo(inizio, a)) cout << a.val << " ESTRATTO DALLA LISTA" << endl;
-                else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
+                else cout <<"LISTA VUOTA, ESTRAZIONE FALLITA" << endl;
                 break;
 
             case 5:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
                 insOrdinato(inizio, a);
+                cout << a.val << " INSERITO NELLA LISTA" << endl;
                 break;
 
             case 6:
