@@ -98,6 +98,18 @@ void stampaFile(lista &inz, char nomefile[]) {
     out.close();
 }
 
+void ordinaLista(lista &inz){
+    lista q,p;
+    double temp;
+    for(q=inz;q!=0;q=q->succ)
+        for(p=q;p!=0;p=p->succ)
+            if(q->val<p->val){
+                temp=q->val;
+                q->val=p->val;
+                p->val=temp;
+            }
+}
+
 int main() {
 
     int s = 0;
@@ -119,6 +131,7 @@ int main() {
         cout << "6 - EST ELEM DATO" << endl;
         cout << "7 - STAMPA SU FILE" << endl;
         cout << "8 - ESCI" << endl;
+        cout << "9 - ORDINA" <<endl;
         cout << endl;
         cout << "SCEGLIERE OPERAZIONE" << endl;
 
@@ -173,6 +186,11 @@ int main() {
 
             case 8:
                 cout << "USCITA" << endl;
+                break;
+
+            case 9:
+                ordinaLista(inizio);
+                cout<<"ORDINATI"<<endl;
                 break;
 
             default:
