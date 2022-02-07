@@ -103,7 +103,7 @@ void ordinaLista(lista &inz){
     double temp;
     for(q=inz;q!=0;q=q->succ)
         for(p=q;p!=0;p=p->succ)
-            if(q->val<p->val){
+            if(q->val>p->val){
                 temp=q->val;
                 q->val=p->val;
                 p->val=temp;
