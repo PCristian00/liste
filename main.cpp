@@ -92,12 +92,11 @@ void stampaFile(lista &inz, char nomefile[]) {
 
     out.open(path, ios::out);
 
-    lista p = inz;
+    lista p;
 
-    while (p != 0) {
+    for (p=inz;p!=0;p=p->succ)
         out << p->val << endl;
-        p = p->succ;
-    }
+
     out.close();
 }
 
