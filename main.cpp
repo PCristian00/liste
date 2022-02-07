@@ -77,8 +77,15 @@ bool estrai_elem_dato(lista &inz, elem &a) {
     return true;
 }
 
-void stampaFile(lista &inz,char path[]) {
+void stampaFile(lista &inz,char nomefile[]) {
     fstream out;
+    char dir[]="C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
+    char path[200];
+    strcat(path,dir);
+    strcat(path,nomefile);
+
+    cout<<path<<endl;
+
     out.open(path, ios::out);
 
     lista p = inz;
@@ -160,9 +167,10 @@ int main() {
                 break;
 
             case 7:
-                strcpy(nomefile,"C:\\Users\\Thinkpad User\\CLionProjects\\liste\\");
+                //strcpy(nomefile,"test2.txt");
+                cin>>nomefile;
 
-                strcat(nomefile,"test1.txt");
+                //strcat(nomefile,"test1.txt");
                 stampaFile(inizio,nomefile);
                 cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
                 break;
