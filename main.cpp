@@ -45,7 +45,6 @@ bool estFondo(lista &inizio, elem &a) {
     lista p, q;
     if (inizio == 0) return false;
     for (q = inizio; q->succ != 0; q = q->succ) p = q;
-    //TODO Teoria diceva a=q->val;
     a.val = q->val;
     //controlla se si estrae il primo elemento
     if (q == inizio) inizio = 0;
@@ -113,37 +112,33 @@ void stampaFile(lista &inz, char nomefile[]) {
     out.close();
 }
 
-void stats(lista &inz){
-
+void stats(lista &inz) {
     lista p;
-    double sum=0;
-    int c=0;
-    double mean=0;
+    double sum = 0;
+    int c = 0;
+    double mean = 0;
 
-    cout<<endl;
+    cout << endl;
 
-    for (p = inz; p != 0; p = p->succ){
-        sum+=p->val;
+    for (p = inz; p != 0; p = p->succ) {
+        sum += p->val;
         c++;
-        cout << p->val <<'\t';
+        cout << p->val << '\t';
     }
-    cout<<endl<<endl;
-    mean=sum/c;
+    cout << endl << endl;
+    mean = sum / c;
 
-    cout<<"NUM ELEM: "<<c<<endl;
-    cout<<"SOMMA: "<<sum<<endl;
-    cout<<"MEDIA: "<<mean<<endl;
+    cout << "NUM ELEM: " << c << endl;
+    cout << "SOMMA: " << sum << endl;
+    cout << "MEDIA: " << mean << endl;
 }
 
 int main() {
-
     int s = 0;
     int sub = 0;
-
     elem a{};
     lista inizio;
     fstream out;
-
     char nomefile[100];
 
     while (s != 6) {
@@ -158,7 +153,6 @@ int main() {
 
         cout << endl;
         cout << "SCEGLIERE OPERAZIONE" << endl;
-
         cin >> s;
 
         switch (s) {
@@ -203,7 +197,6 @@ int main() {
                 cout << "2 - FONDO" << endl;
                 cout << "3 - ELEMENTO SCELTO" << endl;
                 cout << "DOVE ESTRARRE?" << endl;
-
                 cin >> sub;
 
                 switch (sub) {
@@ -228,7 +221,6 @@ int main() {
                         cout << "VALORE NON AMMESSO" << endl;
                         break;
                 }
-
                 break;
 
             case 3:
@@ -244,7 +236,7 @@ int main() {
                 break;
 
             case 5:
-                cout<< "STATISTICHE LISTA"<<endl;
+                cout << "STATISTICHE LISTA" << endl;
                 stats(inizio);
                 break;
 
