@@ -76,6 +76,21 @@ bool estrai_elem_dato(lista &inz, elem &a) {
     return true;
 }
 
+void stampaFile(lista &inz) {
+    fstream out;
+    out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
+
+    lista p = inz;
+
+    while (p != 0) {
+        out << p->val << endl;
+        p = p->succ;
+    }
+
+    cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
+    out.close();
+}
+
 int main() {
 
     int s = 0;
@@ -143,18 +158,7 @@ int main() {
                 break;
 
             case 7:
-
-                out.open("C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt", ios::out);
-
-                p = inizio;
-
-                while (p != 0) {
-                    out << p->val << endl;
-                    p = p->succ;
-                }
-
-                cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
-                out.close();
+                stampaFile(inizio);
                 break;
 
             case 8:
