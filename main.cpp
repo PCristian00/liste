@@ -11,6 +11,7 @@ struct elem {
 
 typedef elem *lista;
 
+//Inserisce un nuovo elemento in testa alla lista
 void insTesta(lista &inizio, elem a) {
     lista p = new elem;        // crea nuovo elem
     p->val = a.val;        // mette contenuto
@@ -18,6 +19,7 @@ void insTesta(lista &inizio, elem a) {
     inizio = p;            // nuovo primo posto
 }
 
+//Estrae l'elemento in testa alla lista
 bool estrai_da_testa(lista &inizio, elem &a) {
     lista p = inizio;
     if (p == 0) return false;
@@ -27,7 +29,7 @@ bool estrai_da_testa(lista &inizio, elem &a) {
     return true;
 }
 
-
+//Inserisce un nuovo elemento in fondo alla lista
 void insFondo(lista &inizio, elem a) {
     lista p, q;
     for (q = inizio; q != 0; q = q->succ) p = q;
@@ -38,6 +40,7 @@ void insFondo(lista &inizio, elem a) {
     else p->succ = q;
 }
 
+//Estrae l'elemento in fondo alla lista
 bool estFondo(lista &inizio, elem &a) {
     lista p, q;
     if (inizio == 0) return false;
@@ -51,7 +54,7 @@ bool estFondo(lista &inizio, elem &a) {
     return true;
 }
 
-
+//Inserisce un nuovo elemento tra l'elemento minore e il maggiore (elementi ordinati in ordine crescente)
 void insOrdinato(lista &inz, elem a) {
     lista p = 0, q, r;
     for (q = inz; q != 0 && q->val < a.val; q = q->succ)
@@ -64,7 +67,7 @@ void insOrdinato(lista &inz, elem a) {
     else p->succ = r;
 }
 
-
+//Estrae l'elemento scelto dalla lista
 bool estrai_elem_dato(lista &inz, elem &a) {
     lista p, q;
     for (q = inz; q != 0 && q->val != a.val; q = q->succ)
@@ -77,6 +80,7 @@ bool estrai_elem_dato(lista &inz, elem &a) {
     return true;
 }
 
+//Stampa su file scelto la lista
 void stampaFile(lista &inz, char nomefile[]) {
     fstream out;
     //cartella in cui viene salvato il file
@@ -94,10 +98,10 @@ void stampaFile(lista &inz, char nomefile[]) {
         out << p->val << endl;
         p = p->succ;
     }
-
     out.close();
 }
 
+//Ordina la lista in ordine crescente
 void ordinaLista(lista &inz){
     lista q,p;
     double temp;
