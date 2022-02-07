@@ -160,7 +160,9 @@ int main() {
                 break;
 
             case 7:
-                strcpy(nomefile,"C:\\Users\\Thinkpad User\\CLionProjects\\liste\\lista.txt");
+                strcpy(nomefile,"C:\\Users\\Thinkpad User\\CLionProjects\\liste\\");
+
+                strcat(nomefile,"test1.txt");
                 stampaFile(inizio,nomefile);
                 cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
                 break;
