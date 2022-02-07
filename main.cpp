@@ -87,7 +87,6 @@ void stampaFile(lista &inz) {
         p = p->succ;
     }
 
-    cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
     out.close();
 }
 
@@ -96,7 +95,7 @@ int main() {
     int s = 0;
 
     elem a{};
-    lista inizio, p;
+    lista inizio;
     fstream out;
 
 
@@ -159,6 +158,7 @@ int main() {
 
             case 7:
                 stampaFile(inizio);
+                cout << "LA LISTA E' STATA SALVATA IN lista.txt" << endl;
                 break;
 
             case 8:
