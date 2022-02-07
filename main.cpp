@@ -113,6 +113,28 @@ void stampaFile(lista &inz, char nomefile[]) {
     out.close();
 }
 
+void stats(lista &inz){
+
+    lista p;
+    double sum=0;
+    int c=0;
+    double mean=0;
+
+    cout<<endl;
+
+    for (p = inz; p != 0; p = p->succ){
+        sum+=p->val;
+        c++;
+        cout << p->val <<'\t';
+    }
+    cout<<endl<<endl;
+    mean=sum/c;
+
+    cout<<"NUM ELEM: "<<c<<endl;
+    cout<<"SOMMA: "<<sum<<endl;
+    cout<<"MEDIA: "<<mean<<endl;
+}
+
 int main() {
 
     int s = 0;
@@ -131,7 +153,7 @@ int main() {
         cout << "2 - ESTRAZIONE" << endl;
         cout << "3 - ORDINA LISTA" << endl;
         cout << "4 - SALVA SU FILE" << endl;
-        cout << "5 - STATISTICHE (WIP)" << endl;
+        cout << "5 - STATISTICHE" << endl;
         cout << "6 - ESCI" << endl;
 
         cout << endl;
@@ -159,15 +181,11 @@ int main() {
                         break;
 
                     case 2:
-                        cout << "INSERIRE VALORE" << endl;
-                        cin >> a.val;
                         insFondo(inizio, a);
                         cout << a.val << " INSERITO IN CODA ALLA LISTA" << endl;
                         break;
 
                     case 3:
-                        cout << "INSERIRE VALORE" << endl;
-                        cin >> a.val;
                         insOrdinato(inizio, a);
                         cout << a.val << " INSERITO NELLA LISTA" << endl;
                         break;
@@ -223,6 +241,11 @@ int main() {
                 cin >> nomefile;
                 stampaFile(inizio, nomefile);
                 cout << "LA LISTA E' STATA SALVATA IN " << nomefile << endl;
+                break;
+
+            case 5:
+                cout<< "STATISTICHE LISTA"<<endl;
+                stats(inizio);
                 break;
 
             case 6:
