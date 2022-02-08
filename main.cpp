@@ -113,20 +113,20 @@ void stampaFile(lista &inz, char nomefile[]) {
 //Mostra su schermo la lista e le sue statistiche: conta, somma e media dei suoi elementi
 void stats(lista &inz) {
     lista p;
-    double sum = 0;
-    int c = 0;
-    double mean = 0;
+    double sum = 0; //Somma elementi lista
+    int c = 0; //Contatore elementi lista
+    double mean; //Media
 
     cout << endl;
 
-    for (p = inz; p != 0; p = p->succ) {
-        sum += p->val;
-        c++;
-        cout << p->val << '\t';
+    for (p = inz; p != 0; p = p->succ) { //Per ogni elemento della lista
+        sum += p->val; //Somma ogni elemento
+        c++; //Incrementa il contatore
+        cout << p->val << '\t'; //Stampa l'elemento
     }
     cout << endl << endl;
-    mean = sum / c;
-
+    mean = sum / c; //Calcolo media
+    //Stampa statistiche
     cout << "NUM ELEM: " << c << endl;
     cout << "SOMMA: " << sum << endl;
     cout << "MEDIA: " << mean << endl;
