@@ -137,7 +137,6 @@ int main() {
     int sub = 0; //Scelta in menu secondario
     elem a{}; //Elemento
     lista inizio; //Lista su cui eseguire tutte le operazioni
-    fstream out; //TODO TOGLIERLO ROMPE IL PROGRAMMA
     char nomefile[100]; //Nome del file scelto
 
     while (s != 6) {
@@ -257,5 +256,8 @@ int main() {
         }
         cout << endl;
     }
+
+    fstream out; //TODO TOGLIERLO ROMPE IL PROGRAMMA
     return 0;
+
 }
