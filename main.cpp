@@ -43,13 +43,13 @@ void insFondo(lista &inizio, elem a) {
 //Estrae l'elemento in fondo alla lista
 bool estFondo(lista &inizio, elem &a) {
     lista p, q;
-    if (inizio == 0) return false;
-    for (q = inizio; q->succ != 0; q = q->succ) p = q;
-    a.val = q->val;
-    //controlla se si estrae il primo elemento
+    if (inizio == 0) return false; //se vuota esci
+    for (q = inizio; q->succ != 0; q = q->succ) p = q; //Tutto q (lista passata come parametro) viene copiato in p
+    a.val = q->val; //Copia il valore in fondo a lista in a
+    //Controlla se si estrae il primo elemento
     if (q == inizio) inizio = 0;
     else p->succ = 0;
-    delete q;
+    delete q; //Cancella il fondo della lista
     return true;
 }
 
@@ -57,11 +57,11 @@ bool estFondo(lista &inizio, elem &a) {
 void insOrdinato(lista &inz, elem a) {
     lista p = 0, q, r;
     for (q = inz; q != 0 && q->val < a.val; q = q->succ)
-        p = q;
-    r = new elem;
-    r->val = a.val;
-    r->succ = q;
-// controlla se si deve inserire in testa
+        p = q; //Se q < a continua a scorrere e copiare q in p
+    r = new elem; //Appena trova a>q crea nuovo elemento in r
+    r->val = a.val; //Copia a in r
+    r->succ = q; //r punta a q (inserito quindi in mezzo)
+//Controlla se si deve inserire in testa
     if (q == inz) inz = r;
     else p->succ = r;
 }
@@ -70,12 +70,12 @@ void insOrdinato(lista &inz, elem a) {
 bool estrai_elem_dato(lista &inz, elem &a) {
     lista p, q;
     for (q = inz; q != 0 && q->val != a.val; q = q->succ)
-        p = q;
-    if (q == 0) return false;
-    if (q == inz) inz = q->succ;
-    else p->succ = q->succ;
-    a = *q;
-    delete q;
+        p = q; //Se q!=a continua a scorrere e copiare q in p
+    if (q == 0) return false; //Se non trova restituisce false
+    if (q == inz) inz = q->succ; //Se a è il primo il nuovo primo è il secondo
+    else p->succ = q->succ; //Altrimenti il successivo
+    a = *q; //Inserisce in a il valore trovato / estratto
+    delete q; //Cancella il valore dato dalla lista
     return true;
 }
 
