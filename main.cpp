@@ -5,18 +5,18 @@
 using namespace std;
 
 struct elem {
-    double val;
-    elem *succ;
+    double val; //Il contenuto della lista
+    elem *succ; //Elemento successivo
 };
 
-typedef elem *lista;
+typedef elem *lista; //Definisce il tipo lista
 
 //Inserisce un nuovo elemento in testa alla lista
 void insTesta(lista &inizio, elem a) {
-    lista p = new elem;        // crea nuovo elem
-    p->val = a.val;        // mette contenuto
-    p->succ = inizio;        // punta al primo
-    inizio = p;            // nuovo primo posto
+    lista p = new elem;        //Crea nuovo elem
+    p->val = a.val;        //Mette contenuto
+    p->succ = inizio;        //Punta al primo
+    inizio = p;            //Nuovo primo posto
 }
 
 //Estrae l'elemento in testa alla lista
