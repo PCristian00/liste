@@ -257,7 +257,8 @@ int main() {
         cout << endl;
     }
 
-    fstream out; //TODO TOGLIERLO ROMPE IL PROGRAMMA
+    fstream broken; //TODO TOGLIERLO ROMPE IL PROGRAMMA
+
     return 0;
 
 }
