@@ -21,23 +21,23 @@ void insTesta(lista &inizio, elem a) {
 
 //Estrae l'elemento in testa alla lista
 bool estrai_da_testa(lista &inizio, elem &a) {
-    lista p = inizio;
-    if (p == 0) return false;
-    a = *p;
-    inizio = p->succ;
-    delete p;
+    lista p = inizio; //p punta al primo
+    if (p == 0) return false; //Se la lista è vuota restituisce false
+    a = *p; //a diventa puntatore del valore del prim
+    inizio = p->succ; //Il successivo a p diventa l'inizio
+    delete p; //Viene eliminato p, il vecchio primo
     return true;
 }
 
 //Inserisce un nuovo elemento in fondo alla lista
 void insFondo(lista &inizio, elem a) {
     lista p, q;
-    for (q = inizio; q != 0; q = q->succ) p = q;
-    q = new elem;
-    q->val = a.val;
-    q->succ = 0;
-    if (inizio == 0) inizio = q;
-    else p->succ = q;
+    for (q = inizio; q != 0; q = q->succ) p = q; //Tutto q (lista passata come parametro) viene copiato in p
+    q = new elem; //Viene aggiunto un nuovo elemento
+    q->val = a.val; //Al nuovo elemento viene assegnato il valore di a (parametro)
+    q->succ = 0; //Il successivo di q è zero ( q è quindi l'ultimo)
+    if (inizio == 0) inizio = q; //Se la lista passata come parametro è finita, ripunta all'inizio (q)
+    else p->succ = q; //Il successivo di p è q
 }
 
 //Estrae l'elemento in fondo alla lista
