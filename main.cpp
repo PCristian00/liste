@@ -82,10 +82,10 @@ bool estrai_elem_dato(lista &inz, elem &a) {
 //Ordina la lista in ordine crescente
 void ordinaLista(lista &inz) {
     lista q, p;
-    double temp;
-    for (q = inz; q != 0; q = q->succ)
+    double temp; //Variabile di memorizzazione temporanea valore
+    for (q = inz; q != 0; q = q->succ) //Ricerca a due indici
         for (p = q; p != 0; p = p->succ)
-            if (q->val > p->val) {
+            if (q->val > p->val) { //Se q > p scambia di posto
                 temp = q->val;
                 q->val = p->val;
                 p->val = temp;
@@ -95,20 +95,18 @@ void ordinaLista(lista &inz) {
 //Stampa su file scelto la lista
 void stampaFile(lista &inz, char nomefile[]) {
     fstream out;
-    //cartella in cui viene salvato il file
+    //Cartella in cui viene salvato il file
     char dir[] = "C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
     char path[200];
     //Il percorso equivale a posizione (dir) + nome del file (nomefile)
     strcat(path, dir);
     strcat(path, nomefile);
-
+    //Crea il file nel percorso scelto e lo prepara per la scrittura
     out.open(path, ios::out);
-
     lista p;
-
     for (p = inz; p != 0; p = p->succ)
         out << p->val << endl;
-
+    // Chiusura del file
     out.close();
 }
 
