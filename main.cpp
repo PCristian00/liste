@@ -133,12 +133,12 @@ void stats(lista &inz) {
 }
 
 int main() {
-    int s = 0;
-    int sub = 0;
-    elem a{};
-    lista inizio;
-    fstream out;
-    char nomefile[100];
+    int s = 0; //Scelta in menu principale
+    int sub = 0; //Scelta in menu secondario
+    elem a{}; //Elemento
+    lista inizio; //Lista su cui eseguire tutte le operazioni
+    fstream out; //TODO TOGLIERLO ROMPE IL PROGRAMMA
+    char nomefile[100]; //Nome del file scelto
 
     while (s != 6) {
 
@@ -155,7 +155,7 @@ int main() {
         cin >> s;
 
         switch (s) {
-
+            //Inserimento di un nuovo elemento
             case 1:
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
@@ -183,6 +183,7 @@ int main() {
                         cout << a.val << " INSERITO NELLA LISTA" << endl;
                         break;
 
+                        //Torna al menu principale
                     default:
                         cout << "VALORE NON AMMESSO" << endl;
                         break;
@@ -190,6 +191,7 @@ int main() {
 
                 break;
 
+                //Estrazione di un elemento
             case 2:
                 cout << "MENU ESTRAZIONE" << endl;
                 cout << "1 - TESTA" << endl;
@@ -216,17 +218,20 @@ int main() {
                         else cout << a.val << " NON PRESENTE NELLA LISTA, ESTRAZIONE FALLITA" << endl;
                         break;
 
+                        //Torna al menu principale
                     default:
                         cout << "VALORE NON AMMESSO" << endl;
                         break;
                 }
                 break;
 
+                //Ordinamento in ordine crescente lista
             case 3:
                 ordinaLista(inizio);
                 cout << "ELEMENTI ORDINATI IN ORDINE CRESCENTE" << endl;
                 break;
 
+                //Salvataggio su file lista
             case 4:
                 cout << "INSERIRE NOME FILE (es. lista.txt)" << endl;
                 cin >> nomefile;
@@ -234,15 +239,18 @@ int main() {
                 cout << "LA LISTA E' STATA SALVATA IN " << nomefile << endl;
                 break;
 
+                //Mostra statistiche e lista stessa su schermo
             case 5:
                 cout << "STATISTICHE LISTA" << endl;
                 stats(inizio);
                 break;
 
+                //Chiude il programma
             case 6:
                 cout << "USCITA" << endl;
                 break;
 
+                //Richiede nuovamente di inserire un valore
             default:
                 cout << "VALORE NON AMMESSO" << endl;
                 break;
