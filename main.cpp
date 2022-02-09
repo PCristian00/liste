@@ -40,10 +40,12 @@ lista leggiFile(char nomefile[]){
 
     while(in.good()){
         p = new elem; //Crea nuovo elem
+
         in >> p->val; //Inserisce elem nella lista
         p->succ = p0;
         p0 = p;
     }
+    in.close();
     return p0;
 }
 
@@ -181,8 +183,8 @@ int main() {
     elem a{}; //Elemento
     lista inizio{}; //Lista su cui eseguire tutte le operazioni
     char nomefile[100]; //Nome del file scelto
-
     int n; //Numero di elementi da inserire alla creazione
+
     cout << "CREAZIONE LISTA" << endl;
     cout<<"1 - INSERIRE MANUALMENTE"<<'\t';
     cout<<"2 - LETTURA DA FILE"<<'\t';
@@ -198,7 +200,10 @@ int main() {
             break;
 
         case 2:
-            inizio=leggiFile("lista.txt");
+            cout << "INSERIRE NOME FILE (es. lista.txt)" << endl;
+            cin >> nomefile;
+            inizio=leggiFile(nomefile);
+            cout<<"FILE LETTO"<<endl;
             stats(inizio);
             break;
 
