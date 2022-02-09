@@ -24,6 +24,28 @@ lista creaLista(int n) {
     return p0;
 }
 
+lista leggiFile(char nomefile[]){
+    fstream in;
+    //Cartella in cui viene salvato il file
+    char dir[] = "C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
+    char path[200];
+    //Il percorso equivale a posizione (dir) + nome del file (nomefile)
+    strcat(path, dir);
+    strcat(path, nomefile);
+    //Crea il file nel percorso scelto e lo prepara per la scrittura
+    in.open(path, ios::in);
+    if(!in.is_open()) cout<<"ERRORE APERTURA FILE"<<endl;
+
+    lista p, p0 = 0;
+
+    while(in.good()){
+        p = new elem; //Crea nuovo elem
+        in >> p->val; //Inserisce elem nella lista
+        p->succ = p0;
+        p0 = p;
+    }
+    return p0;
+}
 
 //Inserisce un nuovo elemento in testa alla lista
 void insTesta(lista &inizio, elem a) {
@@ -153,6 +175,7 @@ void stats(lista &inz) {
 }
 
 int main() {
+    int cs=0; //Scelta creazione
     int s = 0; //Scelta in menu principale
     int sub = 0; //Scelta in menu secondario
     elem a{}; //Elemento
@@ -161,11 +184,28 @@ int main() {
 
     int n; //Numero di elementi da inserire alla creazione
     cout << "CREAZIONE LISTA" << endl;
-    cout << "Quanti valori vuoi inserire nella lista per iniziare? (0 per passare al MENU)" << endl;
-    cin >> n;
-    if (n != 0) { //Possibilità di saltare la fase di creazione
-        inizio = creaLista(n);
+    cout<<"1 - INSERIRE MANUALMENTE"<<'\t';
+    cout<<"2 - LETTURA DA FILE"<<'\t';
+    cout<<"altro - PASSA A MENU"<<endl;
+    cin>>cs;
+    switch (cs) {
+        case 1:
+            cout << "Quanti valori vuoi inserire nella lista per iniziare? (0 per passare al MENU)" << endl;
+            cin >> n;
+            if (n != 0) { //Possibilità di saltare la fase di creazione
+                inizio = creaLista(n);
+            }
+            break;
+
+        case 2:
+            inizio=leggiFile("lista.txt");
+            stats(inizio);
+            break;
+
+        case 3:
+            cout<<"USCITA MENU CREAZIONE";
     }
+
 
     cout << endl;
 
