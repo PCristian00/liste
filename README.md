@@ -1,7 +1,12 @@
 # liste
 Esercitazione su utilizzo liste in C++.
 
-Il programma presenta varie funzioni:
+Il programma offre la possibilità di inserire rapidamente un numero scelto di elementi per creare una lista di valori `double`.
+
+Il resto delle operazioni viene eseguito tramite un menu.
+
+# Menu
+Il menu presenta varie funzioni:
 1. INSERIMENTO ELEMENTO
     - IN TESTA
     - IN CODA
