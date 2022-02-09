@@ -11,7 +11,7 @@ struct elem {
 
 typedef elem *lista; //Definisce il tipo lista
 
-//Permette di inserire velocemente n elementi nella lista per crearla
+//Permette d'inserire velocemente n elementi nella lista per crearla
 lista creaLista(int n) {
     lista p, p0 = 0;
     for (int i = 1; i <= n; i++) {
@@ -49,7 +49,7 @@ void insFondo(lista &inizio, elem a) {
     for (q = inizio; q != 0; q = q->succ) p = q; //Tutto q (lista passata come parametro) viene copiato in p
     q = new elem; //Viene aggiunto un nuovo elemento
     q->val = a.val; //Al nuovo elemento viene assegnato il valore di a (parametro)
-    q->succ = 0; //Il successivo di q è zero ( q è quindi l'ultimo)
+    q->succ = 0; //Il successivo di q è zero (q è quindi l'ultimo)
     if (inizio == 0) inizio = q; //Se la lista passata come parametro è finita, ripunta all'inizio (q)
     else p->succ = q; //Il successivo di p è q
 }
@@ -163,7 +163,7 @@ int main() {
     cout << "CREAZIONE LISTA" << endl;
     cout << "Quanti valori vuoi inserire nella lista per iniziare? (0 per passare al MENU)" << endl;
     cin >> n;
-    if (n != 0) { //Possibilita' di saltare la fase di creazione
+    if (n != 0) { //Possibilità di saltare la fase di creazione
         inizio = creaLista(n);
     }
 
@@ -280,7 +280,7 @@ int main() {
                 cout << "USCITA" << endl;
                 break;
 
-                //Richiede nuovamente di inserire un valore
+                //Richiede nuovamente d'inserire un valore
             default:
                 cout << "VALORE NON AMMESSO" << endl;
                 break;
