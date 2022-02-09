@@ -117,18 +117,24 @@ void stats(lista &inz) {
     int c = 0; //Contatore elementi lista
     double mean; //Media
 
-    cout << endl;
+    cout << "STATISTICHE LISTA" << endl;
+
+    //Se la lista è vuota non stampa statistiche
+    if (inz == 0) {
+        cout << "LISTA VUOTA" << endl;
+        return;
+    }
 
     for (p = inz; p != 0; p = p->succ) { //Per ogni elemento della lista
         sum += p->val; //Somma ogni elemento
         c++; //Incrementa il contatore
         cout << p->val << '\t'; //Stampa l'elemento
     }
-    cout << endl << endl;
+    cout << endl;
     mean = sum / c; //Calcolo media
     //Stampa statistiche
-    cout << "NUM ELEM: " << c << endl;
-    cout << "SOMMA: " << sum << endl;
+    cout << "NUM ELEM: " << c << '\t';
+    cout << "SOMMA: " << sum << '\t';
     cout << "MEDIA: " << mean << endl;
 }
 
@@ -159,9 +165,10 @@ int main() {
                 cout << "INSERIRE VALORE" << endl;
                 cin >> a.val;
                 cout << "MENU INSERIMENTO" << endl;
-                cout << "1 - TESTA" << endl;
-                cout << "2 - FONDO" << endl;
-                cout << "3 - IN ORDINE" << endl;
+                cout << "1 - TESTA" << '\t';
+                cout << "2 - FONDO" << '\t';
+                cout << "3 - IN ORDINE" << '\t';
+                cout << "altro - TORNA A MENU PRINCIPALE" << endl;
                 cout << "DOVE INSERIRE?" << endl;
 
                 cin >> sub;
@@ -184,7 +191,7 @@ int main() {
 
                         //Torna al menu principale
                     default:
-                        cout << "VALORE NON AMMESSO" << endl;
+                        cout << "USCITA MENU INSERIMENTO" << endl;
                         break;
                 }
 
@@ -193,9 +200,10 @@ int main() {
                 //Estrazione di un elemento
             case 2:
                 cout << "MENU ESTRAZIONE" << endl;
-                cout << "1 - TESTA" << endl;
-                cout << "2 - FONDO" << endl;
-                cout << "3 - ELEMENTO SCELTO" << endl;
+                cout << "1 - TESTA" << '\t';
+                cout << "2 - FONDO" << '\t';
+                cout << "3 - ELEMENTO SCELTO" << '\t';
+                cout << "altro - TORNA A MENU PRINCIPALE" << endl;
                 cout << "DOVE ESTRARRE?" << endl;
                 cin >> sub;
 
@@ -219,7 +227,7 @@ int main() {
 
                         //Torna al menu principale
                     default:
-                        cout << "VALORE NON AMMESSO" << endl;
+                        cout << "USCITA MENU INSERIMENTO" << endl;
                         break;
                 }
                 break;
@@ -240,7 +248,6 @@ int main() {
 
                 //Mostra statistiche e lista stessa su schermo
             case 5:
-                cout << "STATISTICHE LISTA" << endl;
                 stats(inizio);
                 break;
 
