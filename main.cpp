@@ -11,6 +11,19 @@ struct elem {
 
 typedef elem *lista; //Definisce il tipo lista
 
+lista creaLista(int n) {
+    lista p, p0 = 0;
+    for (int i = 1; i <= n; i++) {
+        p = new elem;
+        cout<<"INSERIRE VALORE "<<i<<"/"<<n<<endl;
+        cin >> p->val;
+        p->succ = p0;
+        p0 = p;
+    }
+    return p0;
+}
+
+
 //Inserisce un nuovo elemento in testa alla lista
 void insTesta(lista &inizio, elem a) {
     lista p = new elem;        //Crea nuovo elem
@@ -144,6 +157,17 @@ int main() {
     elem a{}; //Elemento
     lista inizio{}; //Lista su cui eseguire tutte le operazioni
     char nomefile[100]; //Nome del file scelto
+
+    int n;
+
+    cout << "CREAZIONE LISTA" << endl;
+    cout << "Quanti valori vuoi inserire nella lista per iniziare? (0 per passare al MENU)" << endl;
+    cin >> n;
+    if (n != 0) {
+        inizio = creaLista(n);
+    }
+
+    cout << endl;
 
     while (s != 6) {
 
