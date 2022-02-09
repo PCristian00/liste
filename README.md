@@ -1,5 +1,20 @@
 # liste
 Esercitazione su utilizzo liste in C++.
+Il programma presenta varie funzioni:
+* INSERIMENTO ELEMENTO
+    - IN TESTA
+    - IN CODA
+    - IN ORDINE CRESCENTE
+* ESTRAZIONE ELEMENTO
+    - DA TESTA
+    - DA CODA
+    - SCELTO DA UTENTE
+* ORDINAMENTO CRESCENTE LISTA
+* SALVATAGGIO SU FILE LISTA
+* STATISTICHE LISTA
+    - SOMMA ELEMENTI
+    - CONTEGGIO ELEMENTI
+    - MEDIA ELEMENTI
 
 ## Errore
 NON rimuovere la variabile
