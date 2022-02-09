@@ -136,7 +136,7 @@ int main() {
     int s = 0; //Scelta in menu principale
     int sub = 0; //Scelta in menu secondario
     elem a{}; //Elemento
-    lista inizio; //Lista su cui eseguire tutte le operazioni
+    lista inizio{}; //Lista su cui eseguire tutte le operazioni
     char nomefile[100]; //Nome del file scelto
 
     while (s != 6) {
@@ -256,17 +256,5 @@ int main() {
         }
         cout << endl;
     }
-
-    //TODO LEGGERE
-    /*
-     * rimuovere questo fstream crea problemi alle funzioni
-     *
-     * -var-create: unable to create variable object
-     * SIGSEGV (Segmentation fault)
-     *
-     */
-    fstream broken;
-
     return 0;
-
 }
