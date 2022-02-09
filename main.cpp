@@ -118,6 +118,11 @@ void stats(lista &inz) {
     double mean; //Media
 
     cout << endl;
+    //Se la lista è vuota non stampa statistiche
+    if(inz==0){
+        cout<<"LISTA VUOTA"<<endl;
+        return;
+    }
 
     for (p = inz; p != 0; p = p->succ) { //Per ogni elemento della lista
         sum += p->val; //Somma ogni elemento
