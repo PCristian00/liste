@@ -11,12 +11,13 @@ struct elem {
 
 typedef elem *lista; //Definisce il tipo lista
 
+//Permette di inserire velocemente n elementi nella lista per crearla
 lista creaLista(int n) {
     lista p, p0 = 0;
     for (int i = 1; i <= n; i++) {
-        p = new elem;
+        p = new elem; //Crea nuovo elem
         cout<<"INSERIRE VALORE "<<i<<"/"<<n<<endl;
-        cin >> p->val;
+        cin >> p->val; //Inserisce elem nella lista
         p->succ = p0;
         p0 = p;
     }
@@ -158,12 +159,11 @@ int main() {
     lista inizio{}; //Lista su cui eseguire tutte le operazioni
     char nomefile[100]; //Nome del file scelto
 
-    int n;
-
+    int n; //Numero di elementi da inserire alla creazione
     cout << "CREAZIONE LISTA" << endl;
     cout << "Quanti valori vuoi inserire nella lista per iniziare? (0 per passare al MENU)" << endl;
     cin >> n;
-    if (n != 0) {
+    if (n != 0) { //Possibilita' di saltare la fase di creazione
         inizio = creaLista(n);
     }
 
