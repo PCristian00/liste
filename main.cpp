@@ -120,8 +120,8 @@ void stats(lista &inz) {
     cout << "STATISTICHE LISTA" << endl;
 
     //Se la lista è vuota non stampa statistiche
-    if(inz==0){
-        cout<<"LISTA VUOTA"<<endl;
+    if (inz == 0) {
+        cout << "LISTA VUOTA" << endl;
         return;
     }
 
@@ -167,7 +167,8 @@ int main() {
                 cout << "MENU INSERIMENTO" << endl;
                 cout << "1 - TESTA" << '\t';
                 cout << "2 - FONDO" << '\t';
-                cout << "3 - IN ORDINE" << endl;
+                cout << "3 - IN ORDINE" << '\t';
+                cout << "altro - TORNA A MENU PRINCIPALE" << endl;
                 cout << "DOVE INSERIRE?" << endl;
 
                 cin >> sub;
@@ -190,7 +191,7 @@ int main() {
 
                         //Torna al menu principale
                     default:
-                        cout << "VALORE NON AMMESSO" << endl;
+                        cout << "USCITA MENU INSERIMENTO" << endl;
                         break;
                 }
 
@@ -201,7 +202,8 @@ int main() {
                 cout << "MENU ESTRAZIONE" << endl;
                 cout << "1 - TESTA" << '\t';
                 cout << "2 - FONDO" << '\t';
-                cout << "3 - ELEMENTO SCELTO" << endl;
+                cout << "3 - ELEMENTO SCELTO" << '\t';
+                cout << "altro - TORNA A MENU PRINCIPALE" << endl;
                 cout << "DOVE ESTRARRE?" << endl;
                 cin >> sub;
 
@@ -225,7 +227,7 @@ int main() {
 
                         //Torna al menu principale
                     default:
-                        cout << "VALORE NON AMMESSO" << endl;
+                        cout << "USCITA MENU INSERIMENTO" << endl;
                         break;
                 }
                 break;
