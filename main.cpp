@@ -49,19 +49,12 @@ lista leggiFile(char nomefile[]) {
 cout<<size<<endl;
     in.clear();
 
-
-    while (in.good()) {
-        p = new elem; //Crea nuovo elem
-//TODO Stampa solo il valore che NON deve stampare
-        if (c != size-1) {
-            in >> p->val; //Inserisce elem nella lista
-            cout << "VAL-> " << p->val << " POS. " << c << endl;
-            p->succ = p0;
-            p0 = p;
-            c++;
-        }
+    for(int i=0;i<size-1;i++){
+        p=new elem;
+        p->val=arr[i];
+        p->succ=p0;
+        p0=p;
     }
-
         in.close();
         return p0;
     }
