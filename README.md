@@ -3,43 +3,28 @@
 Esercitazione su utilizzo liste in C++.
 
 All'apertura del file, il programma offre la possibilità di:
-<ol>
-    <li> Inserire rapidamente un numero scelto di elementi da tastiera.</li>
-    <li> Leggere i valori da un file di testo creato in precedenza.</li>
-</ol>
+* Inserire rapidamente un numero scelto di elementi da tastiera.
+* Leggere i valori da un file di testo creato in precedenza.
 
 Il resto delle operazioni viene eseguito tramite un menu.
 
 # Menu
 
 Il menu presenta varie funzioni:
-
- <ol>
-    <li> INSERIMENTO
-    <ol>
-      <li>In testa</li>
-      <li>In coda</li>
-        <li>In ordine crescente</li>
-    </ol>
-  </li>
-      <li> ESTRAZIONE ELEMENTO
-    <ol>
-      <li>Da testa</li>
-      <li>Da coda</li>
-        <li>Scelto da utente</li>
-    </ol>
-  </li>
-  <li>ORDINAMENTO CRESCENTE LISTA</li>
-    <li>SALVATAGGIO SU FILE LISTA</li>
-      <li> STATISTICHE LISTA
-    <ol>
-      <li>Stampa su schermo lista</li>
-      <li>Somma elementi</li>
-        <li>Conteggio elementi</li>
-        <li>Media elementi</li>
-    </ol>
-  </li>
-</ol> 
+1. INSERIMENTO ELEMENTO
+    - IN TESTA
+    - IN CODA
+    - IN ORDINE CRESCENTE
+2. ESTRAZIONE ELEMENTO
+    - DA TESTA
+    - DA CODA
+    - SCELTO DA UTENTE
+3. ORDINAMENTO CRESCENTE LISTA
+4. SALVATAGGIO SU FILE LISTA
+5. STATISTICHE LISTA
+    - SOMMA ELEMENTI
+    - CONTEGGIO ELEMENTI
+    - MEDIA ELEMENTI
 
 ## Menu
 
