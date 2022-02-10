@@ -16,7 +16,7 @@ lista creaLista(int n) {
     lista p, p0 = 0;
     for (int i = 1; i <= n; i++) {
         p = new elem; //Crea nuovo elem
-        cout<<"INSERIRE VALORE "<<i<<"/"<<n<<endl;
+        cout << "INSERIRE VALORE " << i << "/" << n << endl;
         cin >> p->val; //Inserisce elem nella lista
         p->succ = p0;
         p0 = p;
@@ -24,6 +24,42 @@ lista creaLista(int n) {
     return p0;
 }
 
+lista leggiFile(char nomefile[]) {
+    fstream in;
+    //Cartella in cui viene salvato il file
+    char dir[] = "C:\\Users\\Thinkpad User\\CLionProjects\\liste\\";
+    char path[200];
+    //Il percorso equivale a posizione (dir) + nome del file (nomefile)
+    strcat(path, dir);
+    strcat(path, nomefile);
+    //Crea il file nel percorso scelto e lo prepara per la scrittura
+    in.open(path, ios::in);
+    if (!in.is_open()){
+        cout << "ERRORE APERTURA FILE" << endl;
+        return 0;
+    }
+
+    lista p, p0 = 0;
+    int size = 0;
+    double arr[60];
+
+    while (in.good()) {
+        in >> arr[size]; //Memorizza in un array i valori letti
+        //cout << "Contando elementi..." << size << endl;
+        size++; //Contatore di valori letti
+    }
+    size--; //Esclude valore non compatibile (Ultimo letto)
+    cout << "VALORI LETTI CON SUCCESSO: " << size << endl;
+    in.close();
+
+    for (int i = size - 1; i >= 0; i--) {
+        p = new elem;
+        p->val = arr[i]; //Legge al contrario arr escludendo l'ultimo valore
+        p->succ = p0;
+        p0 = p;
+    }
+    return p0;
+}
 
 //Inserisce un nuovo elemento in testa alla lista
 void insTesta(lista &inizio, elem a) {
@@ -153,19 +189,45 @@ void stats(lista &inz) {
 }
 
 int main() {
+    int cs = 0; //Scelta creazione
     int s = 0; //Scelta in menu principale
     int sub = 0; //Scelta in menu secondario
     elem a{}; //Elemento
     lista inizio{}; //Lista su cui eseguire tutte le operazioni
     char nomefile[100]; //Nome del file scelto
-
     int n; //Numero di elementi da inserire alla creazione
+
     cout << "CREAZIONE LISTA" << endl;
-    cout << "Quanti valori vuoi inserire nella lista per iniziare? (0 per passare al MENU)" << endl;
-    cin >> n;
-    if (n != 0) { //Possibilità di saltare la fase di creazione
-        inizio = creaLista(n);
+    cout << "1 - INSERIRE MANUALMENTE" << '\t';
+    cout << "2 - LETTURA DA FILE" << '\t';
+    cout << "altro - PASSA A MENU" << endl;
+    cin >> cs;
+    switch (cs) {
+        case 1:
+            cout << "Quanti valori vuoi inserire nella lista per iniziare? (0 per passare al MENU)" << endl;
+            cin >> n;
+            if (n != 0) { //Possibilità di saltare la fase di creazione
+                inizio = creaLista(n);
+                stats(inizio);
+            }
+            break;
+
+        case 2:
+            cout << "INSERIRE NOME FILE (es. lista.txt)" << endl;
+            cin >> nomefile;
+            inizio = leggiFile(nomefile);
+            if(inizio!=0){
+                cout << "FILE LETTO" << endl;
+                stats(inizio);
+            }
+            else cout<<"USCITA MENU CREAZIONE";
+            break;
+
+
+        default:
+            cout << "USCITA MENU CREAZIONE";
     }
+
 
     cout << endl;
 
