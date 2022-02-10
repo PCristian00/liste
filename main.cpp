@@ -37,7 +37,6 @@ lista leggiFile(char nomefile[]) {
     if (!in.is_open()) cout << "ERRORE APERTURA FILE" << endl;
 
     lista p, p0 = 0;
-    int c = 0;
     int size = 0;
     double arr[60];
 
@@ -46,12 +45,13 @@ lista leggiFile(char nomefile[]) {
         cout << "Contando elementi..." << size << endl;
         size++;
     }
+    size--; //Esclude valore non compatibile (Ultimo letto)
 cout<<size<<endl;
     in.clear();
 
-    for(int i=0;i<size-1;i++){
+    for(int i=0;i<size;i++){
         p=new elem;
-        p->val=arr[i];
+        p->val=arr[size-1-i];
         p->succ=p0;
         p0=p;
     }
