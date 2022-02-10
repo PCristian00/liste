@@ -49,9 +49,9 @@ lista leggiFile(char nomefile[]) {
 cout<<size<<endl;
     in.clear();
 
-    for(int i=0;i<size;i++){
+    for(int i=size-1;i>=0;i--){
         p=new elem;
-        p->val=arr[size-1-i];
+        p->val=arr[i]; //Legge al contrario arr escludendo l'ultimo valore
         p->succ=p0;
         p0=p;
     }
