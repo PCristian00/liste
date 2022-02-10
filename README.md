@@ -1,7 +1,9 @@
 # liste
 Esercitazione su utilizzo liste in C++.
 
-Il programma offre la possibilità di inserire rapidamente un numero scelto di elementi per creare una lista di valori `double`.
+All'apertura del file, il programma offre la possibilità di:
+* Inserire rapidamente un numero scelto di elementi da tastiera.
+* Leggere i valori da un file di testo creato in precedenza.
 
 Il resto delle operazioni viene eseguito tramite un menu.
 
