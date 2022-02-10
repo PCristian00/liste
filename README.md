@@ -1,29 +1,48 @@
 # liste
+
 Esercitazione su utilizzo liste in C++.
 
 All'apertura del file, il programma offre la possibilità di:
-* Inserire rapidamente un numero scelto di elementi da tastiera.
-* Leggere i valori da un file di testo creato in precedenza.
+<ol>
+    <li> Inserire rapidamente un numero scelto di elementi da tastiera.</li>
+    <li> Leggere i valori da un file di testo creato in precedenza.</li>
+</ol>
 
 Il resto delle operazioni viene eseguito tramite un menu.
 
 # Menu
+
 Il menu presenta varie funzioni:
-1. INSERIMENTO ELEMENTO
-    - IN TESTA
-    - IN CODA
-    - IN ORDINE CRESCENTE
-2. ESTRAZIONE ELEMENTO
-    - DA TESTA
-    - DA CODA
-    - SCELTO DA UTENTE
-3. ORDINAMENTO CRESCENTE LISTA
-4. SALVATAGGIO SU FILE LISTA
-5. STATISTICHE LISTA
-    - SOMMA ELEMENTI
-    - CONTEGGIO ELEMENTI
-    - MEDIA ELEMENTI
+
+ <ol>
+    <li> INSERIMENTO
+    <ol>
+      <li>In testa</li>
+      <li>In coda</li>
+        <li>In ordine crescente</li>
+    </ol>
+  </li>
+      <li> ESTRAZIONE ELEMENTO
+    <ol>
+      <li>Da testa</li>
+      <li>Da coda</li>
+        <li>Scelto da utente</li>
+    </ol>
+  </li>
+  <li>ORDINAMENTO CRESCENTE LISTA</li>
+    <li>SALVATAGGIO SU FILE LISTA</li>
+      <li> STATISTICHE LISTA
+    <ol>
+      <li>Stampa su schermo lista</li>
+      <li>Somma elementi</li>
+        <li>Conteggio elementi</li>
+        <li>Media elementi</li>
+    </ol>
+  </li>
+</ol> 
+
 ## Menu
+
 ```
 MENU
 1 - INSERIMENTO
@@ -34,6 +53,7 @@ MENU
 6 - ESCI
 ```
 ## Inserimento
+
 ```
 SCEGLIERE OPERAZIONE
 1
@@ -46,6 +66,7 @@ DOVE INSERIRE?
 25 INSERITO IN TESTA ALLA LISTA
 ```
 ## Estrazione
+
 ```
 SCEGLIERE OPERAZIONE
 2
@@ -56,12 +77,14 @@ DOVE ESTRARRE?
 77.8 ESTRATTO DALLA LISTA
 ```
 ## Ordinamento
+
 ```
 SCEGLIERE OPERAZIONE
 3
 ELEMENTI ORDINATI IN ORDINE CRESCENTE
 ```
 ## Salvataggio su File
+
 ```
 SCEGLIERE OPERAZIONE
 4
@@ -70,6 +93,7 @@ lista_ord.txt
 LA LISTA E' STATA SALVATA IN lista_ord.txt
 ```
 ## Statistiche
+
 ```
 SCEGLIERE OPERAZIONE
 5
@@ -78,6 +102,7 @@ STATISTICHE LISTA
 NUM ELEM: 5     SOMMA: 187.7    MEDIA: 37.54
 ```
 ## Uscita
+
 ```
 SCEGLIERE OPERAZIONE
 6
