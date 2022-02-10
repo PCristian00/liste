@@ -34,7 +34,10 @@ lista leggiFile(char nomefile[]) {
     strcat(path, nomefile);
     //Crea il file nel percorso scelto e lo prepara per la scrittura
     in.open(path, ios::in);
-    if (!in.is_open()) cout << "ERRORE APERTURA FILE" << endl;
+    if (!in.is_open()){
+        cout << "ERRORE APERTURA FILE" << endl;
+        return 0;
+    }
 
     lista p, p0 = 0;
     int size = 0;
@@ -205,6 +208,7 @@ int main() {
             cin >> n;
             if (n != 0) { //Possibilità di saltare la fase di creazione
                 inizio = creaLista(n);
+                stats(inizio);
             }
             break;
 
@@ -212,11 +216,15 @@ int main() {
             cout << "INSERIRE NOME FILE (es. lista.txt)" << endl;
             cin >> nomefile;
             inizio = leggiFile(nomefile);
-            cout << "FILE LETTO" << endl;
-            stats(inizio);
+            if(inizio!=0){
+                cout << "FILE LETTO" << endl;
+                stats(inizio);
+            }
+            else cout<<"USCITA MENU CREAZIONE";
             break;
 
-        case 3:
+
+        default:
             cout << "USCITA MENU CREAZIONE";
     }
 
